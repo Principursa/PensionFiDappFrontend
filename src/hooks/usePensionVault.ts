@@ -7,6 +7,8 @@ export const PENSION_VAULT_ADDRESSES = {
   84531: '0x2c6b273a0baa508fb10a0650d104a9de32709406' // Base Sepolia
 } as const
 
+type SupportedChainId = keyof typeof PENSION_VAULT_ADDRESSES
+
 export function useDistributionLengthRemaining(
   benefactor: `0x${string}`,
   beneficiary: `0x${string}`
@@ -15,7 +17,7 @@ export function useDistributionLengthRemaining(
 
   return useReadContract({
     abi: pensionVaultAbi,
-    address: PENSION_VAULT_ADDRESSES[chainId],
+    address: PENSION_VAULT_ADDRESSES[chainId as SupportedChainId],
     functionName: 'getDistributionLengthRemaining',
     args: [benefactor, beneficiary],
   })
@@ -29,7 +31,7 @@ export function useAmountPerDistribInterval(
 
   return useReadContract({
     abi: pensionVaultAbi,
-    address: PENSION_VAULT_ADDRESSES[chainId],
+    address: PENSION_VAULT_ADDRESSES[chainId as SupportedChainId],
     functionName: 'getAmountPerDistribInterval',
     args: [benefactor, beneficiary],
   })
@@ -42,7 +44,7 @@ export function usePayOutPlan() {
   const writeAsync = (beneficiary: `0x${string}`) => 
     contract.writeContractAsync({
       abi: pensionVaultAbi,
-      address: PENSION_VAULT_ADDRESSES[chainId],
+      address: PENSION_VAULT_ADDRESSES[chainId as SupportedChainId],
       functionName: 'payOutPlan',
       args: [beneficiary]
     })
@@ -64,7 +66,7 @@ export function useDepositStrategy() {
   ) => 
     contract.writeContractAsync({
       abi: pensionVaultAbi,
-      address: PENSION_VAULT_ADDRESSES[chainId],
+      address: PENSION_VAULT_ADDRESSES[chainId as SupportedChainId],
       functionName: 'depositStrategy',
       args: [
         assets,
@@ -90,7 +92,7 @@ export function useCheckPlanExistence(benefactor: `0x${string}`, beneficiary: `0
 
   return useReadContract({
     abi: pensionVaultAbi,
-    address: PENSION_VAULT_ADDRESSES[chainId],
+    address: PENSION_VAULT_ADDRESSES[chainId as SupportedChainId],
     functionName: 'viewTermInfo',
     args: [benefactor, beneficiary],
     select: (plan: { beneficiary: `0x${string}` }) => plan.beneficiary !== '0x0000000000000000000000000000000000000000',

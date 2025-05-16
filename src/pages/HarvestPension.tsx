@@ -21,6 +21,7 @@ const HarvestPension: React.FC = () => {
 
   // Get amount per distribution interval
   const amountPerInterval = useAmountPerDistribInterval(
+    address as `0x${string}` || '0x0000000000000000000000000000000000000000',
     address as `0x${string}` || '0x0000000000000000000000000000000000000000'
   );
 
@@ -28,7 +29,7 @@ const HarvestPension: React.FC = () => {
 
   const isPlanActive = !!planExistence.data;
   const monthlyAmount = amountPerInterval.data ? 
-    Number(amountPerInterval.data) : 0;
+    Number(amountPerInterval.data) / 10**18 : 0;
 
   const checkingPlan = planExistence.isLoading || amountPerInterval.isLoading;
 

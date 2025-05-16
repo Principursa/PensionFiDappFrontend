@@ -6,6 +6,8 @@ const TOKEN_ADDRESSES = {
   84531: '0xd34D7E746E274F288AF33c0497FFCcb2Ba08a7fD'  // Base Sepolia (using same address as placeholder)
 } as const
 
+type SupportedChainId = keyof typeof TOKEN_ADDRESSES
+
 export function useMintableToken() {
   const chainId = useChainId()
   const contract = useWriteContract()
@@ -13,7 +15,7 @@ export function useMintableToken() {
   const mint = (to: `0x${string}`, amount: bigint) =>
     contract.writeContractAsync({
       abi: erc20MintableAbi,
-      address: TOKEN_ADDRESSES[chainId],
+      address: TOKEN_ADDRESSES[chainId as SupportedChainId],
       functionName: 'mint',
       args: [to, amount],
     })
@@ -21,7 +23,7 @@ export function useMintableToken() {
   const approve = (spender: `0x${string}`, value: bigint) =>
     contract.writeContractAsync({
       abi: erc20MintableAbi,
-      address: TOKEN_ADDRESSES[chainId],
+      address: TOKEN_ADDRESSES[chainId as SupportedChainId],
       functionName: 'approve',
       args: [spender, value],
     })
