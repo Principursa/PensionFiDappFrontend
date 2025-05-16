@@ -15,7 +15,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link
               to="/"
-              className="text-white text-2xl font-extrabold tracking-tight hover:text-emerald-200 transition-colors"
+              className="text-white text-2xl font-extrabold tracking-tight hover:text-emerald-200 transition-colors mr-10"
             >
               Capital Frens
             </Link>

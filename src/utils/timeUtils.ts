@@ -10,17 +10,21 @@ export const SECONDS_IN_MONTH = 30 * SECONDS_IN_DAY;
  * Calculate the required deposit amount based on monthly distribution and duration
  * @param amountPerMonth Amount to be distributed each month
  * @param months Total duration in months
- * @returns Required deposit amount
+ * @returns Required deposit amount in wei (10^18 units)
  */
 export function calculateRequiredDeposit(
   amountPerMonth: number | bigint,
   months: number
 ): bigint {
+  // Convert to BigInt and handle decimal numbers by flooring
   const amountPerMonthBigInt = typeof amountPerMonth === 'number' 
     ? BigInt(Math.floor(amountPerMonth)) 
     : amountPerMonth;
   
-  return amountPerMonthBigInt * BigInt(months);
+  // Convert to wei (10^18 units) and multiply by months
+  const amountPerMonthInWei = amountPerMonthBigInt * BigInt(10 ** 18);
+  
+  return amountPerMonthInWei * BigInt(months);
 }
 
 /**

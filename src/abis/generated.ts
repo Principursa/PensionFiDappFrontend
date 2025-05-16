@@ -3634,14 +3634,20 @@ export const pensionVaultAbi = [
   },
   {
     type: 'function',
-    inputs: [{ name: 'beneficiary', internalType: 'address', type: 'address' }],
+    inputs: [
+      { name: 'benefactor', internalType: 'address', type: 'address' },
+      { name: 'beneficiary', internalType: 'address', type: 'address' },
+    ],
     name: 'getAmountPerDistribInterval',
     outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
     stateMutability: 'view',
   },
   {
     type: 'function',
-    inputs: [{ name: 'beneficiary', internalType: 'address', type: 'address' }],
+    inputs: [
+      { name: 'benefactor', internalType: 'address', type: 'address' },
+      { name: 'beneficiary', internalType: 'address', type: 'address' },
+    ],
     name: 'getDistributionLengthRemaining',
     outputs: [{ name: '', internalType: 'uint256', type: 'uint256' }],
     stateMutability: 'view',
@@ -3720,7 +3726,7 @@ export const pensionVaultAbi = [
     ],
     name: 'isAccumulativePhase',
     outputs: [{ name: '', internalType: 'bool', type: 'bool' }],
-    stateMutability: 'nonpayable',
+    stateMutability: 'pure',
   },
   {
     type: 'function',
@@ -3983,7 +3989,7 @@ export const pensionVaultAbi = [
         ],
       },
     ],
-    stateMutability: 'nonpayable',
+    stateMutability: 'view',
   },
   {
     type: 'function',

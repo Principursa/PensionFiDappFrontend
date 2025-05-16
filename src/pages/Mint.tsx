@@ -112,7 +112,7 @@ const Mint: React.FC = () => {
               value={amount}
               onChange={handleAmountChange}
               min="1"
-              className="block w-full rounded-md border-0 py-3 px-4 text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-500 text-lg"
+              className="block w-full rounded-md border-0 py-3 px-4 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-500 text-lg"
               placeholder="1000"
             />
           </div>
@@ -120,6 +120,19 @@ const Mint: React.FC = () => {
 
         <div className="bg-emerald-50 p-6 rounded-lg mb-8 border border-emerald-100">
           <h3 className="text-xl font-semibold mb-3 text-emerald-800">Current Step: {mintStep === 'mint' ? 'Mint Tokens' : 'Approve Tokens'}</h3>
+          
+          {/* Show amount in wei */}
+          <div className="bg-white p-4 rounded-lg mb-5 border border-emerald-100">
+            <div className="flex justify-between text-gray-700">
+              <span>Amount in tokens:</span>
+              <span className="font-medium">{amount}</span>
+            </div>
+            <div className="flex justify-between text-gray-700 mt-1">
+              <span>Amount in wei:</span>
+              <span className="font-medium">{amount && `${BigInt(Number(amount) * 10 ** 18)}`}</span>
+            </div>
+          </div>
+          
           <div className="flex items-center mb-4">
             <div className={`flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center ${mintStep === 'mint' ? 'bg-emerald-500 text-white' : 'bg-emerald-100 text-emerald-500'}`}>
               1

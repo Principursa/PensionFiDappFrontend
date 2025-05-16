@@ -103,7 +103,7 @@ const RetireNow: React.FC = () => {
                 value={amountPerMonth}
                 onChange={handleAmountChange}
                 min="1"
-                className="block w-full rounded-md border-0 py-3 pl-9 pr-12 text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-500 text-lg"
+                className="block w-full rounded-md border-0 py-3 pl-9 pr-12 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-500 text-lg"
                 placeholder="0.00"
               />
             </div>
@@ -140,7 +140,7 @@ const RetireNow: React.FC = () => {
               <div className="border-t border-gray-300 my-2"></div>
               <div className="flex justify-between text-lg font-bold text-gray-800">
                 <span>Required deposit:</span>
-                <span>${(Number(requiredDeposit)).toLocaleString()}</span>
+                <span>${amountPerMonth * months} (${(Number(requiredDeposit) / (10 ** 18)).toLocaleString()} tokens)</span>
               </div>
             </div>
           </div>
