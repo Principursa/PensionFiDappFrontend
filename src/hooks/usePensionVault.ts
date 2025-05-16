@@ -71,3 +71,21 @@ export function useDepositStrategy() {
 
     return {writeAsync}
 }
+
+
+export function useCheckPlanExistence(benefactor: `0x${string}`, beneficiary: `0x${string}`) {
+  const chainId = useChainId()
+
+  // If beneficiary is zero address, skip the call and return false immediately.
+  if (beneficiary === '0x0000000000000000000000000000000000000000') {
+    return { data: false, isLoading: false, isError: false }
+  }
+
+  return useReadContract({
+    abi: pensionVaultAbi,
+    address: PENSION_VAULT_ADDRESSES[chainId],
+    functionName: 'viewTermInfo',
+    args: [benefactor, beneficiary],
+    select: (plan: { beneficiary: `0x${string}` }) => plan.beneficiary !== '0x0000000000000000000000000000000000000000',
+  })
+}
