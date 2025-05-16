@@ -86,12 +86,12 @@ const RetireNow: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-6 text-center">Retire Now</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Retire Now</h1>
       
       <div className="bg-white rounded-lg shadow-lg p-8">
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
-            <label className="block text-lg font-medium mb-2">
+            <label className="block text-lg font-medium mb-2 text-gray-800">
               How much per month do you want to get paid?
             </label>
             <div className="relative mt-2 rounded-md shadow-sm">
@@ -110,7 +110,7 @@ const RetireNow: React.FC = () => {
           </div>
 
           <div className="mb-8">
-            <label className="block text-lg font-medium mb-2">
+            <label className="block text-lg font-medium mb-2 text-gray-800">
               For how long do you want to get paid?
               <span className="ml-2 text-gray-500">{months} month{months !== 1 ? 's' : ''}</span>
             </label>
@@ -123,24 +123,22 @@ const RetireNow: React.FC = () => {
               className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-500"
             />
             <div className="flex justify-between text-sm text-gray-500 mt-1">
-              <span>1 month</span>
-              <span>10 years</span>
             </div>
           </div>
 
           <div className="bg-gray-100 p-6 rounded-lg mb-8">
-            <h3 className="text-xl font-semibold mb-3">Deposit Summary</h3>
+            <h3 className="text-xl font-semibold mb-3 text-gray-800">Deposit Summary</h3>
             <div className="flex flex-col gap-3">
-              <div className="flex justify-between">
+              <div className="flex justify-between text-gray-700">
                 <span>Monthly payment:</span>
                 <span className="font-medium">${amountPerMonth.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-between text-gray-700">
                 <span>Duration:</span>
                 <span className="font-medium">{months} month{months !== 1 ? 's' : ''}</span>
               </div>
               <div className="border-t border-gray-300 my-2"></div>
-              <div className="flex justify-between text-lg font-bold">
+              <div className="flex justify-between text-lg font-bold text-gray-800">
                 <span>Required deposit:</span>
                 <span>${(Number(requiredDeposit)).toLocaleString()}</span>
               </div>

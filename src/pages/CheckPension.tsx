@@ -83,7 +83,7 @@ const CheckPension: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-6 text-center">Your Pension Status</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Your Pension Status</h1>
       
       <div className="bg-white rounded-lg shadow-lg p-8">
         <div className="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-md mb-8">
@@ -97,19 +97,19 @@ const CheckPension: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-lg font-medium mb-3">Monthly Payment</h3>
-            <p className="text-3xl font-bold">${monthlyAmount.toLocaleString()}</p>
+            <h3 className="text-lg font-medium mb-3 text-gray-800">Monthly Payment</h3>
+            <p className="text-3xl font-bold text-gray-800">${monthlyAmount.toLocaleString()}</p>
           </div>
           <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-lg font-medium mb-3">Remaining Duration</h3>
-            <p className="text-3xl font-bold">{monthsRemaining} month{monthsRemaining !== 1 ? 's' : ''}</p>
+            <h3 className="text-lg font-medium mb-3 text-gray-800">Remaining Duration</h3>
+            <p className="text-3xl font-bold text-gray-800">{monthsRemaining} month{monthsRemaining !== 1 ? 's' : ''}</p>
           </div>
         </div>
 
         <div className="text-center">
           <Link
             to="/harvest"
-            className="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors"
+            className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-colors shadow-md"
           >
             Harvest Your Pension
           </Link>

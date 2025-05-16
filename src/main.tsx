@@ -12,6 +12,7 @@ import Home from "./pages/Home";
 import RetireNow from "./pages/RetireNow";
 import CheckPension from "./pages/CheckPension";
 import HarvestPension from "./pages/HarvestPension";
+import Mint from "./pages/Mint";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "mint",
+        element: <Mint />,
       },
       {
         path: "retire",

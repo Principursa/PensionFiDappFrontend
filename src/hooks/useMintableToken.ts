@@ -2,7 +2,8 @@ import { useChainId, useWriteContract } from 'wagmi'
 import { erc20MintableAbi } from '../abis/generated'
 
 const TOKEN_ADDRESSES = {
-  84532: '0xd34D7E746E274F288AF33c0497FFCcb2Ba08a7fD',
+  84532: '0xd34D7E746E274F288AF33c0497FFCcb2Ba08a7fD', // Base
+  84531: '0xd34D7E746E274F288AF33c0497FFCcb2Ba08a7fD'  // Base Sepolia (using same address as placeholder)
 } as const
 
 export function useMintableToken() {

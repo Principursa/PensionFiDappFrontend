@@ -99,7 +99,7 @@ const HarvestPension: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-6 text-center">Harvest Your Pension</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Harvest Your Pension</h1>
       
       <div className="bg-white rounded-lg shadow-lg p-8">
         <div className="text-center mb-8">
@@ -108,17 +108,17 @@ const HarvestPension: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h2 className="text-2xl font-bold mb-2">Your Monthly Payment</h2>
+          <h2 className="text-2xl font-bold mb-2 text-gray-800">Your Monthly Payment</h2>
           <p className="text-4xl font-bold text-emerald-600">${monthlyAmount.toLocaleString()}</p>
         </div>
 
         <div className="bg-gray-50 p-6 rounded-lg mb-8">
-          <h3 className="text-lg font-medium mb-4">Pension Withdrawal</h3>
-          <p className="text-gray-600 mb-4">
+          <h3 className="text-lg font-medium mb-4 text-gray-800">Pension Withdrawal</h3>
+          <p className="text-gray-700 mb-4">
             By clicking the button below, you will harvest your available pension payment. 
             Note that withdrawals can only be made according to your plan's schedule.
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-600">
             Important: This action will transfer funds to your connected wallet.
           </p>
         </div>

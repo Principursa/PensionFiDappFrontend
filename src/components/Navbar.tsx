@@ -20,13 +20,23 @@ const Navbar = () => {
               Capital Frens
             </Link>
           </div>
-          <div className="flex items-center space-x-8">
+          <div className="hidden md:flex items-center md:space-x-12 lg:space-x-16">
+            <Link
+              to="/mint"
+              className={`text-base font-medium transition-colors ${
+                isActive('/mint')
+                  ? 'text-white border-b-2 border-white pb-1'
+                  : 'text-white hover:text-emerald-200'
+              }`}
+            >
+              Mint Tokens
+            </Link>
             <Link
               to="/retire"
               className={`text-base font-medium transition-colors ${
                 isActive('/retire')
                   ? 'text-white border-b-2 border-white pb-1'
-                  : 'text-emerald-100 hover:text-white'
+                  : 'text-white hover:text-emerald-200'
               }`}
             >
               Retire Now
@@ -36,7 +46,7 @@ const Navbar = () => {
               className={`text-base font-medium transition-colors ${
                 isActive('/check')
                   ? 'text-white border-b-2 border-white pb-1'
-                  : 'text-emerald-100 hover:text-white'
+                  : 'text-white hover:text-emerald-200'
               }`}
             >
               Check Pension
@@ -46,7 +56,7 @@ const Navbar = () => {
               className={`text-base font-medium transition-colors ${
                 isActive('/harvest')
                   ? 'text-white border-b-2 border-white pb-1'
-                  : 'text-emerald-100 hover:text-white'
+                  : 'text-white hover:text-emerald-200'
               }`}
             >
               Harvest Pension
@@ -55,6 +65,55 @@ const Navbar = () => {
               <ConnectButton />
             </div>
           </div>
+          
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center">
+            <ConnectButton />
+          </div>
+        </div>
+        
+        {/* Mobile navigation */}
+        <div className="md:hidden pb-3 pt-1 flex justify-around">
+          <Link
+            to="/mint"
+            className={`text-sm font-medium transition-colors ${
+              isActive('/mint')
+                ? 'text-white border-b-2 border-white pb-1'
+                : 'text-white hover:text-emerald-200'
+            }`}
+          >
+            Mint
+          </Link>
+          <Link
+            to="/retire"
+            className={`text-sm font-medium transition-colors ${
+              isActive('/retire')
+                ? 'text-white border-b-2 border-white pb-1'
+                : 'text-white hover:text-emerald-200'
+            }`}
+          >
+            Retire
+          </Link>
+          <Link
+            to="/check"
+            className={`text-sm font-medium transition-colors ${
+              isActive('/check')
+                ? 'text-white border-b-2 border-white pb-1'
+                : 'text-white hover:text-emerald-200'
+            }`}
+          >
+            Check
+          </Link>
+          <Link
+            to="/harvest"
+            className={`text-sm font-medium transition-colors ${
+              isActive('/harvest')
+                ? 'text-white border-b-2 border-white pb-1'
+                : 'text-white hover:text-emerald-200'
+            }`}
+          >
+            Harvest
+          </Link>
         </div>
       </div>
     </div>
