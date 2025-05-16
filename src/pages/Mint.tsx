@@ -112,7 +112,7 @@ const Mint: React.FC = () => {
               value={amount}
               onChange={handleAmountChange}
               min="1"
-              className="block w-full rounded-md border-0 py-3 px-4 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-500 text-lg"
+              className="block w-full rounded-md border-0 py-3 px-4 text-white ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-500 text-lg"
               placeholder="1000"
             />
           </div>
