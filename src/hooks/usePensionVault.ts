@@ -3,8 +3,7 @@ import { pensionVaultAbi } from '../abis/generated'
 import {useChainId} from 'wagmi'
 
 export const PENSION_VAULT_ADDRESSES = {
-  84532: '0x2c6b273a0baa508fb10a0650d104a9de32709406', // Base
-  84531: '0x2c6b273a0baa508fb10a0650d104a9de32709406' // Base Sepolia
+  84532: '0x2c6b273a0baa508fb10a0650d104a9de32709406', // Base Sepolia
 } as const
 
 type SupportedChainId = keyof typeof PENSION_VAULT_ADDRESSES
@@ -95,7 +94,7 @@ export function useCheckPlanExistence(
 
   const result = useReadContract({
     abi: pensionVaultAbi,
-    address: PENSION_VAULT_ADDRESSES[chainId],
+    address: PENSION_VAULT_ADDRESSES[chainId as SupportedChainId],
     functionName: 'viewTermInfo',
     args: [benefactor, beneficiary],
   })
