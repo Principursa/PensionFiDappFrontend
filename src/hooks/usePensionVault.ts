@@ -3,7 +3,8 @@ import { pensionVaultAbi } from '../abis/generated'
 import {useChainId} from 'wagmi'
 
 const PENSION_VAULT_ADDRESSES = {
-  84532: '0xb707e7b84eddf148e0783567affc12866a127cbe'
+  84532: '0xb707e7b84eddf148e0783567affc12866a127cbe', // Base
+  84531: '0xb707e7b84eddf148e0783567affc12866a127cbe' // Base Sepolia
 } as const
 
 export function useDistributionLengthRemaining(beneficiary: `0x${string}`) {
@@ -49,7 +50,7 @@ export function useDepositStrategy() {
 
   const writeAsync = (
     assets: bigint,
-    to: `0x$string`,
+    to: `0x${string}`,
     distributionPhaseLength: bigint,
     distributionPhaseInterval: bigint,
     beneficiary: `0x${string}`,

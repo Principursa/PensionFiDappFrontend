@@ -1,14 +1,13 @@
 import { http } from 'wagmi'
-import { sepolia } from 'wagmi/chains'
+import { baseSepolia } from 'wagmi/chains'
 
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
 
-
 export const config = getDefaultConfig({
-  appName: "Twine",
+  appName: "Capital Frens",
   projectId: 'b17dfb75dcaf111070742d4a6cbf0c5b',
-  chains: [sepolia],
+  chains: [baseSepolia],
   transports: {
-    [sepolia.id]: http(),
+    [baseSepolia.id]: http(),
   },
 })
