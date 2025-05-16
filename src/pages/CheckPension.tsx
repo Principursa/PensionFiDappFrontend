@@ -34,7 +34,7 @@ const CheckPension: React.FC = () => {
     Math.ceil(secondsToMonths(distributionLengthRemaining.data)) : 0;
   
   const monthlyAmount = amountPerInterval.data ? 
-    Number(amountPerInterval.data) : 0;
+    Number(amountPerInterval.data) / 10**18 : 0;
 
   const isLoading = planExistence.isLoading || 
     distributionLengthRemaining.isLoading || 
