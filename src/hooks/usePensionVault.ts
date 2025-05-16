@@ -82,19 +82,32 @@ export function useDepositStrategy() {
 }
 
 
-export function useCheckPlanExistence(benefactor: `0x${string}`, beneficiary: `0x${string}`) {
+export function useCheckPlanExistence(
+  benefactor: `0x${string}`,
+  beneficiary: `0x${string}`
+) {
   const chainId = useChainId()
 
-  // If beneficiary is zero address, skip the call and return false immediately.
+  // If the beneficiary is zero address, skip the call and return false.
   if (beneficiary === '0x0000000000000000000000000000000000000000') {
     return { data: false, isLoading: false, isError: false }
   }
 
-  return useReadContract({
+  const result = useReadContract({
     abi: pensionVaultAbi,
-    address: PENSION_VAULT_ADDRESSES[chainId as SupportedChainId],
+    address: PENSION_VAULT_ADDRESSES[chainId],
     functionName: 'viewTermInfo',
     args: [benefactor, beneficiary],
-    select: (plan: { beneficiary: `0x${string}` }) => plan.beneficiary !== '0x0000000000000000000000000000000000000000',
   })
+
+  const isValid =
+    result.data &&
+    typeof result.data === 'object' &&
+    'beneficiary' in result.data &&
+    result.data.beneficiary !== '0x0000000000000000000000000000000000000000'
+
+  return {
+    ...result,
+    data: isValid,
+  }
 }
