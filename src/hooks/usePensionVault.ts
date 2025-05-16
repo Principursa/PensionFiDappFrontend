@@ -3,29 +3,35 @@ import { pensionVaultAbi } from '../abis/generated'
 import {useChainId} from 'wagmi'
 
 export const PENSION_VAULT_ADDRESSES = {
-  84532: '0xb707e7b84eddf148e0783567affc12866a127cbe', // Base
-  84531: '0xb707e7b84eddf148e0783567affc12866a127cbe' // Base Sepolia
+  84532: '0x2c6b273a0baa508fb10a0650d104a9de32709406', // Base
+  84531: '0x2c6b273a0baa508fb10a0650d104a9de32709406' // Base Sepolia
 } as const
 
-export function useDistributionLengthRemaining(beneficiary: `0x${string}`) {
+export function useDistributionLengthRemaining(
+  benefactor: `0x${string}`,
+  beneficiary: `0x${string}`
+) {
   const chainId = useChainId()
 
   return useReadContract({
     abi: pensionVaultAbi,
     address: PENSION_VAULT_ADDRESSES[chainId],
     functionName: 'getDistributionLengthRemaining',
-    args: [beneficiary]
+    args: [benefactor, beneficiary],
   })
 }
 
-export function useAmountPerDistribInterval(beneficiary: `0x${string}`) {
+export function useAmountPerDistribInterval(
+  benefactor: `0x${string}`,
+  beneficiary: `0x${string}`
+) {
   const chainId = useChainId()
 
   return useReadContract({
     abi: pensionVaultAbi,
     address: PENSION_VAULT_ADDRESSES[chainId],
     functionName: 'getAmountPerDistribInterval',
-    args: [beneficiary],
+    args: [benefactor, beneficiary],
   })
 }
 
