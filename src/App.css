@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+input {
+  text-align: center;
+}
+#aavesupplyprogress::-webkit-progress-value {
+  background:  #72D1F5; 
+  border-radius: 10px 0 0 10px;
+    /* height:20px; */
+    /* width: 200px; */
+}
+#twinesupplyprogress::-webkit-progress-value {
+  background: #3e1f92; 
+  border-radius: 10px 0 0 10px;
+  /* height:20px; */
+  /* width: 200px; */
+}
+
+#aavesupplyprogress::-webkit-progress-bar {
+  background: lightgray;
+  border-radius: 10px;
+  /* height:20px; */
+  /* width: 200px; */
+
+}
+#twinesupplyprogress::-webkit-progress-bar {
+  background: lightgray;
+  border-radius: 10px;
+  /* height:20px; */
+  /* width: 200px; */
+
+}
+td{
+  padding: 20px;
+} 
+th{
+  padding: 20px;
+}
+
+table {
+  border-radius: 30px;
+}
+#borrowprogress::-webkit-progress-value {
+  background: coral;
+
+  border-radius: 10px 0 0 10px;
+}
+#borrowprogress::-webkit-progress-bar {
+  background: lightgray;
+  border-radius: 10px;
+  /* height:30px; */
+  /* width: 200px; */
+}
+
+/* Set a consistent box-sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Table layout with fixed widths for columns */
+table {
+  width: 100%; /* Adjust as needed */
+  /* table-layout: fixed; /*This ensures consistent column widths */
+  
+  border-radius: 30px; /* Keep your rounded corners */
+}
+
+/* Table headers and cells with consistent padding and text alignment */
+th,
+td {
+  padding: 20px; /* Adjust the padding as needed */
+  text-align: left; /* Use 'center' or 'right' as needed */
+  vertical-align: middle; /* Aligns content in the middle vertically */
+}
+
+/* Headers for specific columns can have specific widths */
+th.market-column {
+  width: 20%; /* Adjust as needed */
+}
+
+th.asset-column {
+  width: 20%; /* Adjust as needed */
+}
+
+
