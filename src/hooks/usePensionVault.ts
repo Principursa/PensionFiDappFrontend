@@ -1,12 +1,7 @@
 import {useReadContract, useWriteContract} from 'wagmi'
 import { pensionVaultAbi } from '../abis/generated'
 import {useChainId} from 'wagmi'
-
-export const PENSION_VAULT_ADDRESSES = {
-  84532: '0x2c6b273a0baa508fb10a0650d104a9de32709406', // Base Sepolia
-} as const
-
-type SupportedChainId = keyof typeof PENSION_VAULT_ADDRESSES
+import { PENSION_VAULT_ADDRESSES, SupportedChainId } from '../configs/addresses'
 
 export function useDistributionLengthRemaining(
   benefactor: `0x${string}`,

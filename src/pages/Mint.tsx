@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { useAccount } from 'wagmi';
+import { useAccount, useChainId } from 'wagmi';
 import { useMintableToken } from '../hooks/useMintableToken';
-import { useChainId } from 'wagmi';
-import { PENSION_VAULT_ADDRESSES } from '../hooks/usePensionVault';
+import { PENSION_VAULT_ADDRESSES, SupportedChainId } from '../configs/addresses';
 
 const Mint: React.FC = () => {
   const { address, isConnected } = useAccount();
@@ -52,7 +51,7 @@ const Mint: React.FC = () => {
       setSuccessMessage(null);
 
       // Get vault address for current chain
-      const vaultAddress = PENSION_VAULT_ADDRESSES[chainId as keyof typeof PENSION_VAULT_ADDRESSES];
+      const vaultAddress = PENSION_VAULT_ADDRESSES[chainId as SupportedChainId];
       
       if (!vaultAddress) {
         throw new Error('Pension vault not available on current network');
