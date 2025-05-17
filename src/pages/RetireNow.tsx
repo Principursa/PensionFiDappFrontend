@@ -1,11 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import { useAccount, useChainId } from 'wagmi';
+import { useAccount } from 'wagmi';
 import { monthsToSeconds, calculateRequiredDeposit } from '../utils/timeUtils';
 import { useDepositStrategy } from '../hooks/usePensionVault';
 
 const RetireNow: React.FC = () => {
   const { address, isConnected } = useAccount();
-  const chainId = useChainId();
   const [amountPerMonth, setAmountPerMonth] = useState<number>(1000);
   const [months, setMonths] = useState<number>(12);
   const [isLoading, setIsLoading] = useState<boolean>(false);
