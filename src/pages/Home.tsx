@@ -7,7 +7,8 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <div className="text-center py-16 px-6">
         <h1 className="text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-emerald-600 to-emerald-800">
-          You've come to the right place 😎
+          You've come to the right place 
+          <p className="text-white">😎</p>
         </h1>
         <p className="text-xl text-gray-700 mb-10 max-w-3xl mx-auto">
           Your decentralized pension platform for a secure retirement. Take control of your financial future with Capital Frens.

@@ -10,33 +10,7 @@
 input {
   text-align: center;
 }
-#aavesupplyprogress::-webkit-progress-value {
-  background:  #72D1F5; 
-  border-radius: 10px 0 0 10px;
-    /* height:20px; */
-    /* width: 200px; */
-}
-#twinesupplyprogress::-webkit-progress-value {
-  background: #3e1f92; 
-  border-radius: 10px 0 0 10px;
-  /* height:20px; */
-  /* width: 200px; */
-}
 
-#aavesupplyprogress::-webkit-progress-bar {
-  background: lightgray;
-  border-radius: 10px;
-  /* height:20px; */
-  /* width: 200px; */
-
-}
-#twinesupplyprogress::-webkit-progress-bar {
-  background: lightgray;
-  border-radius: 10px;
-  /* height:20px; */
-  /* width: 200px; */
-
-}
 td{
   padding: 20px;
 } 
@@ -44,20 +18,6 @@ th{
   padding: 20px;
 }
 
-table {
-  border-radius: 30px;
-}
-#borrowprogress::-webkit-progress-value {
-  background: coral;
-
-  border-radius: 10px 0 0 10px;
-}
-#borrowprogress::-webkit-progress-bar {
-  background: lightgray;
-  border-radius: 10px;
-  /* height:30px; */
-  /* width: 200px; */
-}
 
 /* Set a consistent box-sizing */
 * {
@@ -81,12 +41,6 @@ td {
 }
 
 /* Headers for specific columns can have specific widths */
-th.market-column {
-  width: 20%; /* Adjust as needed */
-}
 
-th.asset-column {
-  width: 20%; /* Adjust as needed */
-}
 
 
