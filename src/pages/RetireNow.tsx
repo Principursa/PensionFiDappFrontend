@@ -2,7 +2,6 @@ import React, { useState, useMemo } from 'react';
 import { useAccount, useChainId } from 'wagmi';
 import { monthsToSeconds, calculateRequiredDeposit } from '../utils/timeUtils';
 import { useDepositStrategy } from '../hooks/usePensionVault';
-import { STRATEGY_ADDRESSES, SupportedChainId } from '../configs/addresses';
 
 const RetireNow: React.FC = () => {
   const { address, isConnected } = useAccount();
@@ -53,9 +52,8 @@ const RetireNow: React.FC = () => {
       // Distribution phase interval is set to one month in seconds
       const distributionPhaseInterval = BigInt(30 * 24 * 60 * 60);
 
-      // Get the appropriate strategy ID for the current chain
-      const strategyAddress = STRATEGY_ADDRESSES[chainId as SupportedChainId];
-      const strategyId = BigInt(0); // Use strategy ID 0
+      // Use strategy ID 0 for both networks
+      const strategyId = BigInt(0);
 
       await depositStrategy.writeAsync(
         requiredDeposit,
